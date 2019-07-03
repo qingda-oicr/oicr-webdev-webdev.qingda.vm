@@ -91,6 +91,8 @@ post('/') do
     end
     if defaultLayout.nil?
       doc['data']['attributes']['layout'] = 'default'
+    else
+      doc['data']['attributes']['layout'] = defaultLayout
     end
   end
 
