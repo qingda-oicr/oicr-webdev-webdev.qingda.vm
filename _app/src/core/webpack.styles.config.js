@@ -4,6 +4,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const os = require('os');
+const entries = require('../../configs/styleEntries');
 const transpiling = require('../../configs/transpiling');
 
 const moduleExclude = new RegExp(
@@ -37,7 +38,7 @@ module.exports = env => {
     ];
 
     return {
-        entry: ['./src/core/_styles'],
+        entry: entries,
         output: {
             filename: '.base_styles',
             path: path.resolve('../assets/dist/js/'),
