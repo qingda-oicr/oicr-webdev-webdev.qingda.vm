@@ -131,6 +131,9 @@ defaults:
 # Jekyll Environment Config
 ######################################################################
 
+# API Path
+filePath: webdevff0b3218aaad11e7abc4cec278b6b50a_API_FILE_PATH
+
 # ImageFile Path
 imagePath: /assets/site/images/
 
