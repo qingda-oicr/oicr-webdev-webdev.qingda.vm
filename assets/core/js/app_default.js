@@ -21,10 +21,14 @@ $(document).ready(function() {
     if (redirectElem) {
         var redirectUrl = redirectElem.dataset.url;
         if (redirectUrl && redirectUrl.length) {
-            if (/^(http|https):\/\//.test(redirectUrl)) {
-                window.location.href = redirectUrl;
+            if (redirectElem.dataset.externalOnly) {
+                if (/^(http|https):\/\//.test(redirectUrl)) {
+                    window.location.href = redirectUrl;
+                } else {
+                    window.location.href = `//${redirectUrl}`;
+                }
             } else {
-                window.location.href = `//${redirectUrl}`;
+                window.location.href = redirectUrl;
             }
         }
     }
