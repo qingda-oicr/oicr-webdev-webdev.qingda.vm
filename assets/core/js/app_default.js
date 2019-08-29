@@ -15,6 +15,21 @@ $(document).ready(function() {
     })();
 
     /*-------------------------------------------------*/
+    // AUTO-REDIRECT
+    var redirectElem = document.getElementById('auto-redirect');
+
+    if (redirectElem) {
+        var redirectUrl = redirectElem.dataset.url;
+        if (redirectUrl && redirectUrl.length) {
+            if (/^(http|https):\/\//.test(redirectUrl)) {
+                window.location.href = redirectUrl;
+            } else {
+                window.location.href = `//${redirectUrl}`;
+            }
+        }
+    }
+
+    /*-------------------------------------------------*/
     // BANNER
     function setCookie(cname, cvalue) {
         document.cookie = `${cname}=${cvalue}`;

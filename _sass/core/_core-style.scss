@@ -529,3 +529,18 @@
     height: 65px;
     margin: 100px 0;
 }
+
+#auto-redirect {
+    .auto-redirect-loader {
+        margin: 100px 0;
+
+        .loading-spinner {
+            margin: 10px 0;
+        }
+
+        p.auto-redirect-text {
+            text-align: center;
+            margin: 10px 0;
+        }
+    }
+}
