@@ -21,7 +21,7 @@ $(document).ready(function() {
     if (redirectElem) {
         var redirectUrl = redirectElem.dataset.url;
         if (redirectUrl && redirectUrl.length) {
-            if (redirectElem.dataset.externalOnly) {
+            if (redirectElem.dataset.externalonly) {
                 if (/^(http|https):\/\//.test(redirectUrl)) {
                     window.location.href = redirectUrl;
                 } else {
