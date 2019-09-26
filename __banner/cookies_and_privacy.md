@@ -8,7 +8,7 @@ isPublic_b: true
 bannerName_txt: cookies_and_privacy
 dismissible_b: true
 dismissType_txt: check
-dismiss_txt: I Consent
+dismiss_txt: I Accept
 position_txt: top
 order_ti: 1
 level_txt: privacy
