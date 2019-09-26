@@ -16,4 +16,4 @@ level_txt: privacy
 
 # Cookies & Privacy
 
-This site uses cookies to ensure you get the best user experience on our website.
+This site uses cookies to ensure you get the best experience on our website. Read our [privacy policy](https://oicr.on.ca/website-privacy-statement/).
