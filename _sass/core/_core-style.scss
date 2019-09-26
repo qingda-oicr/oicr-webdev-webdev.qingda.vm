@@ -61,9 +61,12 @@
         display: flex;
         align-items: center;
         padding: 15px;
+        overflow-y: hidden;
 
         &.banner-dismissible {
-            display: none;
+            &.banner-hidden {
+                display: none;
+            }
         }
 
         &.banner-default {
@@ -76,7 +79,16 @@
 
             .banner-dismiss {
                 background-color: $banner-default-highlight-color;
-                border-color: $banner-default-highlight-color;
+                color: $banner-default-highlight-color;
+                background: #fff;
+
+                &:hover,
+                &:focus,
+                &:active,
+                &.active {
+                    background-color: $banner-default-highlight-color;
+                    color: #fff;
+                }
             }
         }
 
@@ -90,7 +102,16 @@
 
             .banner-dismiss {
                 background-color: $banner-info-highlight-color;
-                border-color: $banner-info-highlight-color;
+                color: $banner-info-highlight-color;
+                background: #fff;
+
+                &:hover,
+                &:focus,
+                &:active,
+                &.active {
+                    background-color: $banner-info-highlight-color;
+                    color: #fff;
+                }
             }
         }
 
@@ -103,9 +124,65 @@
             }
 
             .banner-dismiss {
-                background-color: $banner-error-highlight-color;
                 border-color: $banner-error-highlight-color;
+                color: $banner-error-highlight-color;
+                background: #fff;
+
+                &:hover,
+                &:focus,
+                &:active,
+                &.active {
+                    background-color: $banner-error-highlight-color;
+                    color: #fff;
+                }
             }
+        }
+
+        &.banner-privacy {
+            background: $banner-privacy-background-color;
+            border-color: $banner-privacy-border-color;
+
+            h1 {
+                color: $banner-privacy-highlight-color;
+            }
+
+            .banner-dismiss {
+                border-color: $banner-privacy-button-highlight-color;
+                color: $banner-privacy-button-highlight-color;
+                background: #fff;
+
+                &:hover,
+                &:focus,
+                &:active,
+                &.active {
+                    background-color: $banner-privacy-button-highlight-color;
+                    color: #fff;
+                }
+            }
+        }
+
+        .dismiss-close {
+            &:before {
+                content: 'x';
+            }
+        }
+
+        .dismiss-check {
+            &:before {
+                content: '☐';
+                font-size: 20px;
+                line-height: 1;
+            }
+
+            &.checked {
+                &:before {
+                    content: '☑';
+                }
+            }
+        }
+
+        .banner-dismiss-message {
+            margin-left: 5px;
         }
 
         .banner-content {
