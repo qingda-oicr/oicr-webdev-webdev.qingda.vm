@@ -15,6 +15,25 @@ $(document).ready(function() {
     })();
 
     /*-------------------------------------------------*/
+    // AUTO-REDIRECT
+    var redirectElem = document.getElementById('auto-redirect');
+
+    if (redirectElem) {
+        var redirectUrl = redirectElem.dataset.url;
+        if (redirectUrl && redirectUrl.length) {
+            if (redirectElem.dataset.externalonly) {
+                if (/^(http|https):\/\//.test(redirectUrl)) {
+                    window.location.href = redirectUrl;
+                } else {
+                    window.location.href = `//${redirectUrl}`;
+                }
+            } else {
+                window.location.href = redirectUrl;
+            }
+        }
+    }
+
+    /*-------------------------------------------------*/
     // BANNER
     function setCookie(cname, cvalue) {
         document.cookie = `${cname}=${cvalue}`;
@@ -85,7 +104,7 @@ $(document).ready(function() {
                 ) {
                     $(this).remove();
                 } else {
-                    $(this).css('display', 'flex');
+                    $(this).removeClass('banner-hidden');
                 }
             });
         }
@@ -101,11 +120,27 @@ $(document).ready(function() {
 
         $('.banner-dismiss').click(function() {
             var target = $(this).data('target');
-            var bannerCookie = getClosedBannerListCookie() || [];
-            setClosedBannerListCookie(bannerCookie.concat([target]));
-            $(`#${target}`).remove();
-
-            setMainMarginTopBottom();
+            var checkbox = $(`#${target} .dismiss-check`);
+            if (checkbox) $(checkbox).addClass('checked');
+            $(`#${target}`)
+                .addClass('dismissing')
+                .animate(
+                    {
+                        opacity: 0,
+                        height: '0',
+                        paddingTop: '0',
+                        paddingBottom: '0',
+                    },
+                    1000,
+                    function() {
+                        var bannerCookie = getClosedBannerListCookie() || [];
+                        setClosedBannerListCookie(
+                            bannerCookie.concat([target])
+                        );
+                        $(`#${target}`).remove();
+                        setMainMarginTopBottom();
+                    }
+                );
         });
     });
 
