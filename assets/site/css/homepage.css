@@ -13,6 +13,10 @@
     overflow: hidden;
 }
 
+#particles-js canvas {
+    z-index: 50;
+}
+
 .jumbotron.wrapper .jumbotron-inner {
     position: relative;
     padding-top: 45px;
@@ -40,12 +44,21 @@
     margin-top: 80px;
 }
 
+.jumbotron-content {
+    z-index: 100;
+}
+
+#webdev-carousel {
+    padding-left: 60px;
+}
+
 .carousel {
     overflow: hidden;
 }
 
 .carousel-inner {
     overflow: hidden;
+    z-index: 100;
 }
 
 .carousel-indicators {
@@ -65,6 +78,7 @@
     height: 12px;
     background-color: #fff;
     margin: 0px 3px;
+    z-index: 100;
 }
 
 .carousel:after {
@@ -134,7 +148,7 @@
     margin-top: 30px;
     position: relative;
     width: 105%;
-    margin-left: 60px;
+    /* margin-left: 60px; */
     margin-bottom: 10px;
 }
 
@@ -318,11 +332,11 @@ nav.navbar {
     }
     #webdev-carousel {
         margin-top: -25px;
+        padding-left: 50px;
     }
     .circle {
         margin-top: 10px;
         width: 115%;
-        margin-left: 50px;
     }
     .cicrle2 {
         margin-left: -70%;
@@ -340,10 +354,12 @@ nav.navbar {
     .jumbotron-main {
         margin-top: calc(-35% - 248px);
     }
+    #webdev-carousel {
+        padding-left: 50px;
+    }
     .circle {
         margin-top: 0;
         width: 120%;
-        margin-left: 50px;
     }
     .circle2 {
         margin-top: 35%;
@@ -1151,7 +1167,7 @@ section .row {
     text-align: center;
 }
 
-.logo-activedriver img {    
+.logo-activedriver img {
     max-width: 100%;
     max-height: 100%;
     height: auto;
